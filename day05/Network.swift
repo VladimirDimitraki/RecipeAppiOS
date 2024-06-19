@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class Network: ObservableObject {
     
@@ -25,21 +26,6 @@ class Network: ObservableObject {
                 DispatchQueue.main.async {
                     self.recipes = decodedRecipe.drinks
                     
-
-                    for drink in recipes {
-                        
-                        guard let urlImage = URL(string: drink.strDrinkThumb) else {
-                            return
-                        }
-                        
-                        URLSession.shared.dataTask(with: urlImage) { data, response, error in
-                            guard let dataImage = data else { return }
-                            
-                            do {
-                                let decodedImage = try JSONDecoder().decode(drink.strDrinkThumb.self, from: data)
-                            }
-                        }
-                    }
                 }
             } catch {
                 print("Decode error \(error)")
@@ -47,3 +33,4 @@ class Network: ObservableObject {
         }.resume()
     }
 }
+

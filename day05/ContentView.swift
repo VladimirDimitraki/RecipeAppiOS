@@ -14,7 +14,8 @@ struct ContentView: View {
     var body: some View {
         List(recipies.recipes, id: \.idDrink) { recipe in
             Text(recipe.strDrink)
-            Image(recipe.strDrinkThumb)
+            recipe.decodedImage()
+//            Image(
         }.onAppear {
             self.recipies.getRecipe()
         }
