@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct MainViewRecipe: View {
+    
+    @StateObject var network = Network.shared
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List(network.recipes, id: \.idDrink) { recipe in
+            Text(recipe.strDrink)
+//            Image(recipe.strImageSource)
+        }
     }
 }
 
