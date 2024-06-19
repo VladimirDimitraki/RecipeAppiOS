@@ -20,11 +20,26 @@ class Network: ObservableObject {
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else { print("data error"); return }
             
-            
             do {
                 let decodedRecipe = try JSONDecoder().decode(ResultQuery.self, from: data)
                 DispatchQueue.main.async {
                     self.recipes = decodedRecipe.drinks
+                    
+
+                    for drink in recipes {
+                        
+                        guard let urlImage = URL(string: drink.strDrinkThumb) else {
+                            return
+                        }
+                        
+                        URLSession.shared.dataTask(with: urlImage) { data, response, error in
+                            guard let dataImage = data else { return }
+                            
+                            do {
+                                let decodedImage = try JSONDecoder().decode(drink.strDrinkThumb.self, from: data)
+                            }
+                        }
+                    }
                 }
             } catch {
                 print("Decode error \(error)")
