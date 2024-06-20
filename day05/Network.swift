@@ -25,7 +25,6 @@ class Network: ObservableObject {
                 let decodedRecipe = try JSONDecoder().decode(ResultQuery.self, from: data)
                 DispatchQueue.main.async {
                     self.recipes = decodedRecipe.drinks
-                    
                 }
             } catch {
                 print("Decode error \(error)")
