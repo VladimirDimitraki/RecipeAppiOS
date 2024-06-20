@@ -9,36 +9,21 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var recipies: Network
+    @ObservedObject var network: Network
     
     var body: some View {
-        List(recipies.recipes, id: \.idDrink) { recipe in
-
-            NavigationLink(destination: DescriptionWindow(id: recipe.idDrink)) {
-                
-                AsyncImage(url: URL(string: (recipe.strDrinkThumb))) { image in
-                    image
-                        .resizable()
-                        .scaledToFit()
-                        .clipShape(Circle())
-                        .frame(width: 100)
-                }placeholder: {
-                    ProgressView()
-                }
-    
-                Text(recipe.strDrink)
-                    .font(Font.custom("Copperplate", size: 20))
-                
+        NavigationView {
+            VStack {
+                NavigationViewRecipe(network: network)
+                    .navigationTitle("Drink recipeis")
             }
-            
-        }.onAppear {
-            self.recipies.getRecipe()
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(recipies: Network())
+        ContentView(network: Network())
     }
 }
+

@@ -8,17 +8,31 @@
 import SwiftUI
 
 struct NavigationViewRecipe: View {
-    @StateObject var network = Network()
+    
+    @ObservedObject var network = Network()
     
     var body: some View {
-        NavigationView {
-            VStack {
-                ContentView(recipies: network)
-                    .navigationTitle("Drink recipeis")
-//                NavigationLink(destination: Text(""), label: {
-//                    Text("Description")
-//                })
+        List(network.recipes, id: \.idDrink) { recipe in
+
+            NavigationLink(destination: DescriptionWindow(id: recipe.idDrink)) {
+                
+                AsyncImage(url: URL(string: (recipe.strDrinkThumb))) { image in
+                    image
+                        .resizable()
+                        .scaledToFit()
+                        .clipShape(Circle())
+                        .frame(width: 100)
+                }placeholder: {
+                    ProgressView()
+                }
+    
+                Text(recipe.strDrink)
+                    .font(Font.custom("Copperplate", size: 20))
+                
             }
+            
+        }.onAppear {
+            self.network.getRecipe()
         }
     }
 }

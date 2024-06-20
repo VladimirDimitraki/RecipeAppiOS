@@ -14,7 +14,7 @@ struct day05App: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(recipies: network)
+            ContentView(network: network)
         }
     }
 }
