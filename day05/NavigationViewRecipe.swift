@@ -28,9 +28,7 @@ struct NavigationViewRecipe: View {
     
                 Text(recipe.strDrink)
                     .font(Font.custom("Copperplate", size: 20))
-                
             }
-            
         }.onAppear {
             self.network.getRecipe()
         }
