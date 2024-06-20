@@ -14,9 +14,18 @@ struct Recipe: Decodable, Hashable {
     let strInstructions: String
     let strDrinkThumb: String
     
-    func decodedImage() -> AsyncImage<Image> {
-        AsyncImage(url: URL(string: strDrinkThumb), scale: 5)
-    }
+//    func decodedImage() -> AsyncImage<Image> {
+//        if let url = URL(string: strDrinkThumb) {
+//            AsyncImage(url: url) { image in
+//                image
+//                    .resizable()
+//                    .clipShape(Circle())
+//            } placeholder: {
+//                ProgressView()
+//            }
+//        }
+//        return
+//    }
 }
 
 struct ResultQuery: Decodable {

@@ -15,6 +15,8 @@
 		7839C7072C1C95B6001F7BB6 /* day05UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7839C7062C1C95B6001F7BB6 /* day05UITestsLaunchTests.swift */; };
 		788A1C072C22A94900C191CA /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788A1C062C22A94900C191CA /* Recipe.swift */; };
 		788A1C092C22B13500C191CA /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788A1C082C22B13500C191CA /* Network.swift */; };
+		78E7CE7D2C24035C005F8E81 /* NavigationViewRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E7CE7C2C24035C005F8E81 /* NavigationViewRecipe.swift */; };
+		78E7CE7F2C24052A005F8E81 /* DescriptionWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E7CE7E2C24052A005F8E81 /* DescriptionWindow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		7839C7062C1C95B6001F7BB6 /* day05UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day05UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		788A1C062C22A94900C191CA /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		788A1C082C22B13500C191CA /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		78E7CE7C2C24035C005F8E81 /* NavigationViewRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewRecipe.swift; sourceTree = "<group>"; };
+		78E7CE7E2C24052A005F8E81 /* DescriptionWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionWindow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 			children = (
 				7839C6E82C1C95B4001F7BB6 /* day05App.swift */,
 				7839C6EA2C1C95B4001F7BB6 /* ContentView.swift */,
+				78E7CE7C2C24035C005F8E81 /* NavigationViewRecipe.swift */,
+				78E7CE7E2C24052A005F8E81 /* DescriptionWindow.swift */,
 				7839C6EC2C1C95B6001F7BB6 /* Assets.xcassets */,
 				7839C6EE2C1C95B6001F7BB6 /* day05.entitlements */,
 				788A1C062C22A94900C191CA /* Recipe.swift */,
@@ -253,9 +259,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78E7CE7F2C24052A005F8E81 /* DescriptionWindow.swift in Sources */,
 				788A1C092C22B13500C191CA /* Network.swift in Sources */,
 				7839C6EB2C1C95B4001F7BB6 /* ContentView.swift in Sources */,
 				7839C6E92C1C95B4001F7BB6 /* day05App.swift in Sources */,
+				78E7CE7D2C24035C005F8E81 /* NavigationViewRecipe.swift in Sources */,
 				788A1C072C22A94900C191CA /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

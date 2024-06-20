@@ -13,9 +13,24 @@ struct ContentView: View {
     
     var body: some View {
         List(recipies.recipes, id: \.idDrink) { recipe in
-            Text(recipe.strDrink)
-            recipe.decodedImage()
-//            Image(
+
+            NavigationLink(destination: DescriptionWindow(id: recipe.idDrink)) {
+                
+                AsyncImage(url: URL(string: (recipe.strDrinkThumb))) { image in
+                    image
+                        .resizable()
+                        .scaledToFit()
+                        .clipShape(Circle())
+                        .frame(width: 100)
+                }placeholder: {
+                    ProgressView()
+                }
+    
+                Text(recipe.strDrink)
+                    .font(Font.custom("Copperplate", size: 20))
+                
+            }
+            
         }.onAppear {
             self.recipies.getRecipe()
         }
